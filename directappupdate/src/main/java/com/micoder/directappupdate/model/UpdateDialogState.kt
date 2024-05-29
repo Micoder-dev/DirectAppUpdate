@@ -5,5 +5,6 @@ data class UpdateDialogState(
     val updateType: UpdateType = UpdateType.None,
     val status: String = "",
     val progress: Float = 0f,
-    val showUpdateButton: Boolean = false
+    val showUpdateButton: Boolean = false,
+    val config: AppUpdateConfig? = null
 )

@@ -32,7 +32,7 @@ class DirectAppUpdateManager private constructor(
      * [Builder] is a class that helps to build the [DirectAppUpdateManager] instance.
      */
     class Builder(private val activity: Activity) {
-        private lateinit var appUpdateConfig: AppUpdateConfig
+        lateinit var appUpdateConfig: AppUpdateConfig
         private lateinit var directUpdateListener: DirectUpdateListener
 
         /**

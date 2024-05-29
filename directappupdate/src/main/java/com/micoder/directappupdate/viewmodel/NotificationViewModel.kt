@@ -10,6 +10,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * A [ViewModel] that handles the notification progress.
+ */
 @SuppressLint("MissingPermission")
 @HiltViewModel
 class NotificationViewModel @Inject constructor(

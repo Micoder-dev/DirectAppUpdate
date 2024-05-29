@@ -14,6 +14,9 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Qualifier
 import javax.inject.Singleton
 
+/**
+ * [NotificationModule] provides the [NotificationCompat.Builder] and [NotificationManagerCompat] instances
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object NotificationModule {

@@ -16,6 +16,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             DirectAppUpdateTheme {
 
+                /**
+                 * Initialize DirectAppUpdate with the following parameters to enable the library in your app.
+                 */
                 val configUrl = "https://cloud-multiapp-default-rtdb.firebaseio.com/ctn-iptv.json"
                 DirectAppUpdate(activity = this@MainActivity, configUrl = configUrl, appIcon = R.mipmap.ic_launcher)
 
