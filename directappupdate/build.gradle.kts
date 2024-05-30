@@ -83,7 +83,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.micoder.directappupdate"
             artifactId = "directappupdate"
-            version = "1.0.0"
+            version = "4.0.1"
 
             afterEvaluate {
                 from(components["release"])

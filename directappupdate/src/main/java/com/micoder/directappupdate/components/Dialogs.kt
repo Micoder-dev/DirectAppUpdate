@@ -133,14 +133,10 @@ fun UpdateDialog(
                 Spacer(modifier = Modifier.height(16.dp))
                 if (dialogState.showUpdateButton) {
                     Row {
-                        androidx.tv.material3.Button(onClick = onUpdateClick) {
-                            Text(text = "Update App")
-                        }
+                        Button(text = "Update App", onClick = onUpdateClick)
                         if (dialogState.updateType == UpdateType.Flexible) {
                             Spacer(modifier = Modifier.width(8.dp))
-                            androidx.tv.material3.Button(onClick = onCancelClick) {
-                                Text(text = "Cancel")
-                            }
+                            Button(text = "Cancel", onClick = onCancelClick)
                         }
                     }
                 } else {
