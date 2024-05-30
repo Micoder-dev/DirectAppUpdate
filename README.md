@@ -11,22 +11,22 @@ DirectAppUpdate is an open-source in-app update library using Jetpack Compose to
 
 ### Library Setup
 
-#### In your `settings.gradle`
+#### In your `settings.gradle.ktx`
 ```gradle
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         mavenCentral()
-        maven { url 'https://jitpack.io' }
+        maven("https://jitpack.io")
     }
 }
 ```
 
-#### In your project `build.gradle` 
+#### In your project `build.gradle.ktx` 
 [![](https://jitpack.io/v/Micoder-dev/DirectAppUpdate.svg)](https://jitpack.io/#Micoder-dev/DirectAppUpdate)
 ```gradle
 dependencies {
-    implementation 'com.github.Micoder-dev:DirectAppUpdate:Tag'
+    implementation("com.github.Micoder-dev:DirectAppUpdate:Tag")
 }
 ```
 
@@ -37,7 +37,7 @@ Create a configuration file for your app updates:
 ```json
 {
   "apkFileName": "new_release.apk",
-  "appName": "CTN-IPTV",
+  "appName": "My App",
   "downloadUrl": "https://example/new_release.apk",
   "immediateUpdate": false,
   "releaseNotes": "- Exciting Update\n - Bug Fixes",
@@ -51,7 +51,7 @@ Create a configuration file for your app updates:
 ### 1st Way: Simple Implementation using Jetpack Compose
 
 ```kotlin
-val configUrl = "https://cloud-multiapp-default-rtdb.firebaseio.com/ctn-iptv.json"
+val configUrl = "https://example/micoder.json"
 DirectAppUpdate(activity = this@MainActivity, configUrl = configUrl, appIcon = R.mipmap.ic_launcher)
 ```
 
