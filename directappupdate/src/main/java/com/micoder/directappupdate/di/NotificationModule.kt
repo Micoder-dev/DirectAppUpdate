@@ -23,13 +23,14 @@ object NotificationModule {
 
     @Singleton
     @Provides
-    @MainNotificationCompatBuilder
+    @DirectAppUpdateNotificationCompatBuilder
     fun provideNotificationBuilder(@ApplicationContext context: Context): NotificationCompat.Builder {
         return NotificationCompat.Builder(context, "Channel ID").setPriority(NotificationCompat.PRIORITY_LOW).setOngoing(true)
     }
 
     @Singleton
     @Provides
+    @DirectAppUpdateNotificationManager
     fun provideNotificationManager(@ApplicationContext context: Context): NotificationManagerCompat {
         val notificationManager = NotificationManagerCompat.from(context)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -43,4 +44,8 @@ object NotificationModule {
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
-annotation class MainNotificationCompatBuilder
+annotation class DirectAppUpdateNotificationCompatBuilder
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class DirectAppUpdateNotificationManager

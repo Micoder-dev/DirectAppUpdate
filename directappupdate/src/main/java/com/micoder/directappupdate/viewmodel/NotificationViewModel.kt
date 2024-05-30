@@ -5,7 +5,8 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.micoder.directappupdate.di.MainNotificationCompatBuilder
+import com.micoder.directappupdate.di.DirectAppUpdateNotificationCompatBuilder
+import com.micoder.directappupdate.di.DirectAppUpdateNotificationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -16,8 +17,8 @@ import javax.inject.Inject
 @SuppressLint("MissingPermission")
 @HiltViewModel
 class NotificationViewModel @Inject constructor(
-    @MainNotificationCompatBuilder private val notificationBuilder: NotificationCompat.Builder,
-    private val notificationManager: NotificationManagerCompat
+    @DirectAppUpdateNotificationCompatBuilder private val notificationBuilder: NotificationCompat.Builder,
+    @DirectAppUpdateNotificationManager private val notificationManager: NotificationManagerCompat
 ) : ViewModel() {
 
     fun showProgress(progress: Int, icon: Int) {
