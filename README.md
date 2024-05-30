@@ -11,22 +11,22 @@ DirectAppUpdate is an open-source in-app update library using Jetpack Compose to
 
 ### Library Setup
 
-#### In your `settings.gradle`
+#### In your `settings.gradle.ktx`
 ```gradle
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         mavenCentral()
-        maven { url 'https://jitpack.io' }
+        maven("https://jitpack.io")
     }
 }
 ```
 
-#### In your project `build.gradle` 
+#### In your project `build.gradle.ktx` 
 [![](https://jitpack.io/v/Micoder-dev/DirectAppUpdate.svg)](https://jitpack.io/#Micoder-dev/DirectAppUpdate)
 ```gradle
 dependencies {
-    implementation 'com.github.Micoder-dev:DirectAppUpdate:Tag'
+    implementation("com.github.Micoder-dev:DirectAppUpdate:Tag")
 }
 ```
 
