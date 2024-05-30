@@ -37,7 +37,7 @@ Create a configuration file for your app updates:
 ```json
 {
   "apkFileName": "new_release.apk",
-  "appName": "CTN-IPTV",
+  "appName": "My App",
   "downloadUrl": "https://example/new_release.apk",
   "immediateUpdate": false,
   "releaseNotes": "- Exciting Update\n - Bug Fixes",
@@ -51,7 +51,7 @@ Create a configuration file for your app updates:
 ### 1st Way: Simple Implementation using Jetpack Compose
 
 ```kotlin
-val configUrl = "https://cloud-multiapp-default-rtdb.firebaseio.com/ctn-iptv.json"
+val configUrl = "https://example/micoder.json"
 DirectAppUpdate(activity = this@MainActivity, configUrl = configUrl, appIcon = R.mipmap.ic_launcher)
 ```
 
