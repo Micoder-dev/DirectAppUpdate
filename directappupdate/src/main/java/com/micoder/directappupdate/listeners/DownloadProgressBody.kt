@@ -10,9 +10,6 @@ import okio.buffer
 
 private const val EXHAUSTED_SOURCE = -1L
 
-/**
- * A [ResponseBody] that informs a [ProgressListener] about the download progress.
- */
 class DownloadProgressBody(
     private val responseBody: ResponseBody,
     private val progressListener: ProgressListener
@@ -34,7 +31,6 @@ class DownloadProgressBody(
 
             override fun read(sink: Buffer, byteCount: Long): Long {
                 val bytesRead = super.read(sink, byteCount)
-                // read() returns the number of bytes read, or -1 if this source is exhausted.
                 totalBytesRead += if (bytesRead != EXHAUSTED_SOURCE) bytesRead else 0L
                 progressListener.update(totalBytesRead, responseBody.contentLength(), bytesRead == EXHAUSTED_SOURCE)
                 return bytesRead
@@ -43,17 +39,6 @@ class DownloadProgressBody(
     }
 }
 
-/**
- * Callback getting informed when the download progress of [DownloadProgressBody] updates.
- */
 interface ProgressListener {
-
-    /**
-     * Informs this listener that the download progress was updated.
-     *
-     * @param bytesRead The bytes that have been read.
-     * @param contentLength The total bytes that are being read.
-     * @param done Whether the download is complete.
-     */
     fun update(bytesRead: Long, contentLength: Long, done: Boolean)
 }

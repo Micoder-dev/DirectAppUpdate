@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
-    <files-path
-        name="files"
-        path="." />
+    <files-path name="app_updates" path="app_updates/" />
+    <external-files-path name="external_updates" path="." />
+    <external-files-path name="tv_app_updates" path="app_updates/" />
 </paths>

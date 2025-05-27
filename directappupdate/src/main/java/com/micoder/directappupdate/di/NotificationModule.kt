@@ -15,7 +15,7 @@ import javax.inject.Qualifier
 import javax.inject.Singleton
 
 /**
- * [NotificationModule] provides the [NotificationCompat.Builder] and [NotificationManagerCompat] instances
+ * Updated NotificationModule provides the NotificationCompat.Builder and NotificationManagerCompat instances
  */
 @Module
 @InstallIn(SingletonComponent::class)
@@ -25,7 +25,10 @@ object NotificationModule {
     @Provides
     @DirectAppUpdateNotificationCompatBuilder
     fun provideNotificationBuilder(@ApplicationContext context: Context): NotificationCompat.Builder {
-        return NotificationCompat.Builder(context, "Channel ID").setPriority(NotificationCompat.PRIORITY_LOW).setOngoing(true)
+        return NotificationCompat.Builder(context, "Channel ID")
+            .setPriority(NotificationCompat.PRIORITY_LOW)
+            .setOngoing(true)
+            .setColor(0xFFD4AF37.toInt()) // Golden color for notifications
     }
 
     @Singleton
@@ -34,12 +37,12 @@ object NotificationModule {
     fun provideNotificationManager(@ApplicationContext context: Context): NotificationManagerCompat {
         val notificationManager = NotificationManagerCompat.from(context)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel("Channel ID", "Main Channel", NotificationManager.IMPORTANCE_LOW)
+            val channel = NotificationChannel("Channel ID", "App Updates", NotificationManager.IMPORTANCE_LOW)
+            channel.description = "Notifications for app update progress"
             notificationManager.createNotificationChannel(channel)
         }
         return notificationManager
     }
-
 }
 
 @Qualifier

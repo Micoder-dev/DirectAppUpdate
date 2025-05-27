@@ -3,6 +3,7 @@ package com.micoder.directappupdate.components
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.compositionLocalOf
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.platform.LocalConfiguration
 
 val LocalAlwaysTelevision = compositionLocalOf { false }

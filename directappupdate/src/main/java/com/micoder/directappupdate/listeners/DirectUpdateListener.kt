@@ -11,4 +11,5 @@ interface DirectUpdateListener {
     fun onProgress(progress: Float)
     fun onDownloadComplete()
     fun onDownloadFailed(error: String)
+    fun onApkAlreadyDownloaded()
 }
